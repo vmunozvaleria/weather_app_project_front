@@ -40,11 +40,20 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "f460d367f2f35c17c3c62d368d6bd207";
-let city = "Valdivia";
+function search(city) {
+  let apiKey = "f460d367f2f35c17c3c62d368d6bd207";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-console.log(apiUrl);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
-axios.get(apiUrl).then(displayTemperature);
+search("Valdivia");
