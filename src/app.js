@@ -10,10 +10,49 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[date.getDay()];
 
   return `${day} ${hours}:${minutes}`;
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#w_forecast");
+
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+                <div class="forecast_day">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/04n@2x.png"
+                  alt="whather"
+                  width="40"
+                />
+                <div class="forecast_temperature">
+                  <span class="forecast_temperature_max"> 14ºC </span>
+                  <span class="forecast_temperature_min"> 11ºC </span>
+                </div>
+              </div>
+
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 
 function displayTemperature(response) {
@@ -80,3 +119,5 @@ let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", displayCelciusTemperature);
 
 search("Valdivia");
+
+displayForecast();
