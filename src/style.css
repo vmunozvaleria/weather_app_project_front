@@ -29,6 +29,11 @@ li::first-letter {
   text-transform: capitalize;
 }
 
+.scandinavian_people_says {
+  text-align: center;
+  margin-top: 25px;
+  color: #878787;
+}
 .weather-app-wrapper {
   max-width: 600px;
   margin: 40px auto;
@@ -69,10 +74,15 @@ li::first-letter {
   color: #878787;
 }
 
-.forecast-day {
+.forecast_day {
   font-size: 18px;
+  opacity: 0.7;
 }
 
 .forecast_temperature {
   font-size: 12px;
+}
+
+.forecast_temperature_min {
+  opacity: 0.7;
 }
