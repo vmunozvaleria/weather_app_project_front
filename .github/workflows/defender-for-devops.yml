@@ -23,7 +23,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
- # schedule:
+ # schedule run:
  #   - cron: '31 10 * * 5'
 
 jobs:
