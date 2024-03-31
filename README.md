@@ -1,7 +1,7 @@
 # Weather app project
 
 Final Project SheCodes Plus
+-----------------------------
+The content in this repository is about the project I worked on during the [SheCodes](https://www.shecodes.io/) workshops.
 
-The content in this repository is about the project I worked on during the SheCodes workshops.
-
-https://www.shecodes.io/
+- [Project Site](https://keen-booth-9dd012.netlify.app)
